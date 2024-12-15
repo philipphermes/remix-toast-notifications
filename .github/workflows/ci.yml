@@ -1,0 +1,43 @@
+name: Remix Toast Notification CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typecheck:
+    name: Type check
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: 📥 Install deps
+        run: yarn --frozen-lockfile
+
+      - name: check
+        run: yarn typecheck
+
+  vitest:
+    name: ⚡️Vitest
+    needs: typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: 📥 Install deps
+        run: yarn --frozen-lockfile
+
+      - name: 🔬 Vitest
+        run: yarn vitest run

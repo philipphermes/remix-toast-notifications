@@ -1,7 +1,10 @@
 {
   "extends": "@total-typescript/tsconfig/tsc/dom/library",
   "include": ["src/**/*"],
-  "exclude": ["src/**/*.test.*"],
+  "exclude": [
+    "src/**/*.test.*",
+    "tests/**/*"
+  ],
   "compilerOptions": {
     "outDir": "./build"
   }

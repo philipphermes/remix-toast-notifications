@@ -1,0 +1,32 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-npm:
+    name: 🚀 Publish to npm
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: 📥 Install deps
+        run: yarn --frozen-lockfile
+
+      - name: 🔨 Build
+        run: yarn build
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          registry-url: https://registry.npmjs.org/
+
+      - name: publish
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
