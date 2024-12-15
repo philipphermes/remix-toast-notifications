@@ -1,5 +1,10 @@
 # remix-toast-notifications
 
+![CI](https://github.com/philipphermes/remix-toast-notifications/actions/workflows/ci.yml/badge.svg)
+![NPM](https://github.com/philipphermes/remix-toast-notifications/actions/workflows/publish.yml/badge.svg)
+
+Lightweight toast notifications in remix
+
 ## Setup
 
 > [!TIP]
@@ -54,7 +59,21 @@ export async function loader({request}: LoaderFunctionArgs) {
 }
 ```
 
-#### Create Toast Component (Example)
+### Methods
+
+| method                                            | explanation                                                     |
+|---------------------------------------------------|-----------------------------------------------------------------|
+| `persist(request, messages)`                      | adds toast messages to session                                  |
+| `retrieve(request)`                               | retrives the toast messages from session                        |
+| `getDataWithToasts(request, messages, value)`     | returns data() with a given value and adds messages to session  |
+| `throwRedirectWithToasts(request, messages, url)` | throws a redirect with a given url and adds messages to session |
+
+### Create Toast Component (Example)
+
+**Dependencies:**
+- tailwind
+- daisyUI
+- heroicons
 
 ```tsx
 import {CheckCircleIcon, XCircleIcon} from "@heroicons/react/24/outline";
@@ -111,12 +130,3 @@ export default function Toasts({time, fps}: ToastConfig) {
     )
 }
 ```
-
-### Methods
-
-| method                                            | explanation                                                     |
-|---------------------------------------------------|-----------------------------------------------------------------|
-| `persist(request, messages)`                      | adds toast messages to session                                  |
-| `retrieve(request)`                               | retrives the toast messages from session                        |
-| `getDataWithToasts(request, messages, value)`     | returns data() with a given value and adds messages to session  |
-| `throwRedirectWithToasts(request, messages, url)` | throws a redirect with a given url and adds messages to session |
