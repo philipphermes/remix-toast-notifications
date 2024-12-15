@@ -73,10 +73,8 @@ export async function loader({request}: LoaderFunctionArgs) {
 **Dependencies:**
 - tailwind
 - daisyUI
-- heroicons
 
 ```tsx
-import {CheckCircleIcon, XCircleIcon} from "@heroicons/react/24/outline";
 import {useRouteLoaderData} from "@remix-run/react";
 import {useEffect, useState} from "react";
 import {loader} from "~/root";
@@ -114,12 +112,10 @@ export default function Toasts({time, fps}: ToastConfig) {
                     key={key}
                     role="alert"
                     className={
-                        "alert shadow-lg overflow-hidden w-96 transform transition-all duration-300 ease-out "
-                        + (toastMessage.status ? "alert-success" : "alert-error")
+                        `alert shadow-lg overflow-hidden w-96 transform transition-all duration-300 ease-out alert-${toastMessage.status}`
                         + (progress > 0 ? " translate-y-0 opacity-100" : " translate-y-10 opacity-0")
                     }
                 >
-                    {toastMessage.status ? (<CheckCircleIcon className="h-12"/>) : (<XCircleIcon className="h-12"/>)}
                     <div className="w-full">
                         <span>{toastMessage.message}</span>
                         <progress className="progress progress-accent w-full" value={progress} max="100"></progress>
