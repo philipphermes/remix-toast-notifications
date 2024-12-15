@@ -1,6 +1,4 @@
-# remix-toast
-
-**The easiest way to translate your Remix apps.**
+# remix-toast-notifications
 
 ## Setup
 
@@ -19,7 +17,7 @@ npm install remix-toast-notifications
 
 #### Create Session
 
-````ts
+```ts
 import {createCookieSessionStorage} from "@remix-run/node";
 
 export const SESSION_KEY_TOASTS = 'toasts'
@@ -36,6 +34,12 @@ export const sessionStorage = createCookieSessionStorage({
 });
 
 export const {getSession, commitSession, destroySession} = sessionStorage;
+```
+
+#### Create Toast
+
+````ts
+export const toast = new Toast(sessionStorage, SESSION_KEY_TOASTS)
 ````
 
 #### Adjust `root.tsx`
@@ -44,9 +48,9 @@ add a loader where you load your toast notifications to be accessible in any com
 
 ```ts
 export async function loader({request}: LoaderFunctionArgs) {
-    const {toasts} = (await retrieve(request))
+    const {toasts} = (await toast.retrieve(request))
 
-    return getDataWithToasts(request, [], toasts)
+    return await toast.getDataWithToasts(request, [], toasts)
 }
 ```
 
