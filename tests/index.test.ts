@@ -34,6 +34,42 @@ describe('index', () => {
         const {toasts} = await toast.retrieve(request)
 
         expect(toasts.length).toBe(2)
+
+        expect(toasts[0].message).toBe("Test 1")
+        expect(toasts[0].status).toBe("success")
+
+        expect(toasts[1].message).toBe("Test 2")
+        expect(toasts[1].status).toBe("warning")
+    })
+
+    it('can add toast single message and can retrieve them', async () => {
+        const sessionStorage = createCookieSessionStorage({
+            cookie: {
+                name: "_session",
+                sameSite: "lax",
+                path: "/",
+                httpOnly: true,
+                secure: false,
+            },
+        });
+
+        const toast = new Toast(sessionStorage, 'toasts')
+
+        const request = new Request('http://localhost');
+
+        const session = await toast.persist(request, {
+                message: "Test 1",
+                status: "success",
+        })
+
+        request.headers.set("cookie", await sessionStorage.commitSession(session));
+
+        const {toasts} = await toast.retrieve(request)
+
+        expect(toasts.length).toBe(1)
+
+        expect(toasts[0].message).toBe("Test 1")
+        expect(toasts[0].status).toBe("success")
     })
 
     it('can get data with toasts', async () => {

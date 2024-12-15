@@ -12,8 +12,12 @@ export class Toast {
     ) {
     }
 
-    async persist(request: Request, messages: ToastMessage[])
+    async persist(request: Request, messages: ToastMessage|ToastMessage[])
     {
+        if (!(messages instanceof Array)) {
+            messages = [messages]
+        }
+
         const session = await this.sessionStorage.getSession(request.headers.get("cookie"))
         session.set(this.sessionKey, messages);
 
@@ -31,10 +35,6 @@ export class Toast {
     }
 
     async getDataWithToasts<T>(request: Request, messages: ToastMessage|ToastMessage[], value: T) {
-        if (!(messages instanceof Array)) {
-            messages = [messages]
-        }
-
         const session = await this.persist(request, messages)
 
         return data(value, {
@@ -45,10 +45,6 @@ export class Toast {
     }
 
     async throwRedirectWithToasts(request: Request, messages: ToastMessage|ToastMessage[], url: string) {
-        if (!(messages instanceof Array)) {
-            messages = [messages]
-        }
-
         const session = await this.persist(request, messages)
 
         throw redirect(url, {

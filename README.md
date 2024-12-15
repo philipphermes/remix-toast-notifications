@@ -3,7 +3,7 @@
 ![CI](https://github.com/philipphermes/remix-toast-notifications/actions/workflows/ci.yml/badge.svg)
 ![NPM](https://github.com/philipphermes/remix-toast-notifications/actions/workflows/publish.yml/badge.svg)
 
-Lightweight toast notifications in remix
+Lightweight headless toast notifications in remix
 
 ## Setup
 
