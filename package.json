@@ -1,0 +1,49 @@
+{
+  "name": "remix-toast-notifications",
+  "version": "0.0.1",
+  "description": "Lightweight toast notifications in remix",
+  "author": {
+    "name": "Philipp Hermes",
+    "url": "https://github.com/philipphermes"
+  },
+  "keywords": [
+    "remix",
+    "react",
+    "toast"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philipphermes/remix-toast-notifications.git"
+  },
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "exports": {
+    ".": "./build/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "build",
+    "src",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@remix-run/node": "^2.15.1",
+    "@remix-run/react": "^2.15.1",
+    "@total-typescript/tsconfig": "^1.0.4",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "react": "^18.0.0",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "sideEffects": false,
+  "type": "module"
+}
