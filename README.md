@@ -90,19 +90,17 @@ export default function Toasts({time, fps}: ToastConfig) {
 
     useEffect(() => {
         setProgress(100);
+        const intervalDuration = 1000 / fps;
+        const decrement = 100 / (time / intervalDuration);
 
         const progress = setInterval(() => {
             setProgress((prevProgress) => {
-                if (prevProgress <= 0) {
-                    return 0;
-                }
-                return prevProgress - (fps / 100);
+                if (prevProgress <= 0) return 0;
+                return prevProgress - decrement;
             });
-        }, time / 100 * (fps / 100));
+        }, intervalDuration);
 
-        return () => {
-            clearInterval(progress);
-        };
+        return () => clearInterval(progress);
     }, [fps, time, toasts]);
 
     return (
