@@ -1,6 +1,6 @@
 {
   "name": "remix-toast-notifications",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight headless toast notifications in remix",
   "author": {
     "name": "Philipp Hermes",
