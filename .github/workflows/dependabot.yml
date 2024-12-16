@@ -1,0 +1,20 @@
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    reviewers:
+      - "philipphermes"
+    assignees:
+      - "philipphermes"
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "philipphermes"
+    assignees:
+      - "philipphermes"
