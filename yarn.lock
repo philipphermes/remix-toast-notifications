@@ -213,14 +213,14 @@
     undici "^6.11.1"
 
 "@remix-run/react@^2.15.1":
-  version "2.15.1"
-  resolved "https://registry.yarnpkg.com/@remix-run/react/-/react-2.15.1.tgz#60d95d0849e987b4bab9c9c61a2f95048c993fcc"
-  integrity sha512-h0BVUeg87vt3FKbYfoF7Ln56MM3O8rvGLDKYOuPY0OgNlJVaQKQzWVX+mnlmzysX4hF7WnOPMw1q38Ow7N9wKg==
+  version "2.15.2"
+  resolved "https://registry.yarnpkg.com/@remix-run/react/-/react-2.15.2.tgz#4f57434c120e0b7885d8b737c417b67f72a3a042"
+  integrity sha512-NAAMsSgoC/sdOgovUewwRCE/RUm3F+MBxxZKfwu3POCNeHaplY5qGkH/y8PUXvdN1EBG7Z0Ko43dyzCfcEy5PA==
   dependencies:
     "@remix-run/router" "1.21.0"
-    "@remix-run/server-runtime" "2.15.1"
-    react-router "6.28.0"
-    react-router-dom "6.28.0"
+    "@remix-run/server-runtime" "2.15.2"
+    react-router "6.28.1"
+    react-router-dom "6.28.1"
     turbo-stream "2.4.0"
 
 "@remix-run/router@1.21.0":
@@ -232,6 +232,19 @@
   version "2.15.1"
   resolved "https://registry.yarnpkg.com/@remix-run/server-runtime/-/server-runtime-2.15.1.tgz#1ebf96c351f3398d73856fae38dbd41fd45b2da2"
   integrity sha512-TDM3rzax//N2F5uNMV5pNTWAop8cYul6hteDu+Xmfwys/eRGlbzEf7YJzyRj6Kcsg2TFVHI7+xEPItGAVm1hHA==
+  dependencies:
+    "@remix-run/router" "1.21.0"
+    "@types/cookie" "^0.6.0"
+    "@web3-storage/multipart-parser" "^1.0.0"
+    cookie "^0.6.0"
+    set-cookie-parser "^2.4.8"
+    source-map "^0.7.3"
+    turbo-stream "2.4.0"
+
+"@remix-run/server-runtime@2.15.2":
+  version "2.15.2"
+  resolved "https://registry.yarnpkg.com/@remix-run/server-runtime/-/server-runtime-2.15.2.tgz#5be945027612c0891748d1788d39fea1ef0ba33c"
+  integrity sha512-OqiPcvEnnU88B8b1LIWHHkQ3Tz2GDAmQ1RihFNQsbrFKpDsQLkw0lJlnfgKA/uHd0CEEacpfV7C9qqJT3V6Z2g==
   dependencies:
     "@remix-run/router" "1.21.0"
     "@types/cookie" "^0.6.0"
@@ -2266,18 +2279,18 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-router-dom@6.28.0:
-  version "6.28.0"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.28.0.tgz#f73ebb3490e59ac9f299377062ad1d10a9f579e6"
-  integrity sha512-kQ7Unsl5YdyOltsPGl31zOjLrDv+m2VcIEcIHqYYD3Lp0UppLjrzcfJqDJwXxFw3TH/yvapbnUvPlAj7Kx5nbg==
+react-router-dom@6.28.1:
+  version "6.28.1"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.28.1.tgz#b78fe452d2cd31919b80e57047a896bfa1509f8c"
+  integrity sha512-YraE27C/RdjcZwl5UCqF/ffXnZDxpJdk9Q6jw38SZHjXs7NNdpViq2l2c7fO7+4uWaEfcwfGCv3RSg4e1By/fQ==
   dependencies:
     "@remix-run/router" "1.21.0"
-    react-router "6.28.0"
+    react-router "6.28.1"
 
-react-router@6.28.0:
-  version "6.28.0"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.28.0.tgz#29247c86d7ba901d7e5a13aa79a96723c3e59d0d"
-  integrity sha512-HrYdIFqdrnhDw0PqG/AKjAqEqM7AvxCz0DQ4h2W8k6nqmc5uRBYDag0SBxx9iYz5G8gnuNVLzUe13wl9eAsXXg==
+react-router@6.28.1:
+  version "6.28.1"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.28.1.tgz#f82317ab24eee67d7beb7b304c0378b2b48fa178"
+  integrity sha512-2omQTA3rkMljmrvvo6WtewGdVh45SpL9hGiCI9uUrwGGfNFDIvGK4gYJsKlJoNVi6AQZcopSCballL+QGOm7fA==
   dependencies:
     "@remix-run/router" "1.21.0"
 
